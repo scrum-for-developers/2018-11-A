@@ -66,6 +66,10 @@ public class SeleniumAdapter {
         WebElement table = driver.findElement(By.className(pageElement.getElementId()));
         return new HtmlBookList(table);
     }
+    
+    public boolean isNotShown(PageElement pageElement) {
+    	return driver.findElements(By.className(pageElement.getElementId())).isEmpty();
+    }
 
     public void clickOnPageElement(PageElement pageElement) {
         WebElement element = driver.findElement(By.id(pageElement.getElementId()));

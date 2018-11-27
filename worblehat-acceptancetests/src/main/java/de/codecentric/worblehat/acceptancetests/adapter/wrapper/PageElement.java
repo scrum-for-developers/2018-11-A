@@ -1,7 +1,7 @@
 package de.codecentric.worblehat.acceptancetests.adapter.wrapper;
 
 public enum PageElement {
-    ADDBOOKBUTTON("addBook"), BOOKLIST("bookList"), BORROWBOOKBUTTON("borrowBook"), ISBNERROR("isbn-error"),
+    ADDBOOKBUTTON("addBook"), BOOKLIST("bookList"), BORROWBOOKBUTTON("borrowBook"), SHOWMYBORROWEDBOOKS("showMyBorrowedBooks"), ISBNERROR("isbn-error"),
     RETURNALLBOOKSBUTTON("returnAllBooks"), ERROR("error");
 
 

@@ -12,7 +12,9 @@ And borrower <borrower1> has borrowed books <isbns1>
 And borrower <borrower2> has borrowed books <isbns2>
 When borrower <borrower1> returns all his books
 Then books <isbns1> are not borrowed anymore by borrower <borrower1>
+And the borrowed book list for user <borrower1> is empty
 And books <isbns2> are still borrowed by borrower <borrower2>
+And the borrowed book list for user <borrower2> contains a book with isbn <isbns2>
 
 Examples:    
     

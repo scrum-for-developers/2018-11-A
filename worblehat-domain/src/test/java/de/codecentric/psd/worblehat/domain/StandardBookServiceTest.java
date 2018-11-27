@@ -11,7 +11,6 @@ import static com.github.npathai.hamcrestopt.OptionalMatchers.isEmpty;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
 
@@ -119,6 +118,18 @@ public class StandardBookServiceTest {
 		assertThat(borrowingArgumentCaptor.getValue().getBorrowedBook(), is(aBook));
 	}
 
+	@Test
+	public void shouldShowMyBorrowedBooks() {
+		givenALibraryWith(aBook,anotherBook);
+		ArgumentCaptor<Borrowing> borrowingArgumentCaptor = ArgumentCaptor.forClass(Borrowing.class);
+		bookService.borrowBook(aBook.getIsbn(), BORROWER_EMAIL);
+		verify(borrowingRepository).save(borrowingArgumentCaptor.capture());
+		
+		List<Book> findMyBorrowedBooks = bookService.findMyBorrowedBooks(BORROWER_EMAIL);
+		assertThat(findMyBorrowedBooks,hasItems(aBorrowing.getBorrowedBook(),anotherBorrowing.getBorrowedBook()));
+	}
+
+	
 	@Test
 	public void shouldThrowExceptionWhenAllBooksAreBorrowedRightNow() {
 		givenALibraryWith(aBorrowedBook, aCopyofBorrowedBook);

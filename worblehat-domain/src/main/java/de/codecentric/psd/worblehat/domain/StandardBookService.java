@@ -8,6 +8,7 @@ import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * The domain service class for book operations.
@@ -37,6 +38,14 @@ public class StandardBookService implements BookService {
 		for (Borrowing borrowing : borrowingsByUser) {
 			borrowingRepository.delete(borrowing);
 		}
+	}
+
+	@Override
+	public List<Book> findMyBorrowedBooks(String borrowerEmailAddress) {
+		List<Borrowing> borrowingsByUser = borrowingRepository.findBorrowingsByBorrower(borrowerEmailAddress);
+		return borrowingsByUser.stream().map(Borrowing::getBorrowedBook)
+				.sorted((o1, o2) -> o1.getBorrowing().getReturnDate().compareTo(o2.getBorrowing().getReturnDate()))
+				.collect(Collectors.toList());
 	}
 
 	@Override

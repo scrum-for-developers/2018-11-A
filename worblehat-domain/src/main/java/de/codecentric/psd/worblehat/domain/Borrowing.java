@@ -4,6 +4,7 @@ import org.joda.time.DateTime;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -11,6 +12,11 @@ import java.util.Date;
  */
 @Entity
 public class Borrowing implements Serializable {
+
+	/**
+	 * The duration a book is borrowed
+	 */
+	private static final int BORROW_DURATION = 14;
 
 	private static final long serialVersionUID = 1L;
 
@@ -26,9 +32,6 @@ public class Borrowing implements Serializable {
 	@OneToOne()
 	private Book borrowedBook;
 
-	public String getBorrowerEmailAddress() {
-		return borrowerEmailAddress;
-	}
 
 	/**
 	 * @param book
@@ -56,4 +59,26 @@ public class Borrowing implements Serializable {
 	public Book getBorrowedBook() {
 		return borrowedBook;
 	}
+	
+
+	public String getBorrowerEmailAddress() {
+		return borrowerEmailAddress;
+	}
+	
+	public Date getBorrowDate() {
+		return borrowDate;
+	}
+	
+	/**
+	 * 
+	 * @return the calculated return date, {@link #getBorrowDate()} plus {@value #BORROW_DURATION} days
+	 */
+	public Date getReturnDate() {
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(borrowDate);
+		cal.add(Calendar.DAY_OF_YEAR, BORROW_DURATION);
+		Date newDate = cal.getTime();
+		return newDate;
+	}
+	
 }

@@ -18,6 +18,13 @@ public interface BookService {
 
 	List<Book> findAllBooks();
 
+	/**
+	 * 
+	 * @param borrowerEmailAddress the mail of the borrower
+	 * @return
+	 */
+	List<Book> findMyBorrowedBooks(String borrowerEmailAddress);
+
 	Optional<Book> createBook(String title, String author, String edition, String isbn, int yearOfPublication);
 
 	boolean bookExists(String isbn);
