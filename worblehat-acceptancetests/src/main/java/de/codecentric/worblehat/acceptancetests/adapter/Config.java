@@ -32,4 +32,9 @@ public class Config {
         return getString("environment");
     }
 
+    public static String getVersion() {
+        return getString("version");
+    }
+
+
 }
