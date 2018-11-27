@@ -37,10 +37,10 @@
 		</release>
 
 		<release version="1.2" date="2011-04-06"
-				 description="Book description">
-			<fixes dev="betaworblers" type="update">
+			description="Book description">
+			<action dev="betaworblers" type="fixes">
 				Fixes wrong validation messages.
-			</fixes>
+			</action>
 		</release>
 	</body>
 </document>
