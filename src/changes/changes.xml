@@ -35,5 +35,12 @@
 				Improved input validation messages.
 			</action>
 		</release>
+
+		<release version="1.2" date="2011-04-06"
+				 description="Book description">
+			<fixes dev="betaworblers" type="update">
+				Fixes wrong validation messages.
+			</fixes>
+		</release>
 	</body>
 </document>
