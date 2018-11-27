@@ -34,22 +34,6 @@ public class Book implements Serializable {
 	private String description;
 
 	/**
-	 * Get the description
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 * Set the description
-	 * @param description the description
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	/**
 	 * Empty constructor needed by Hibernate.
 	 */
 	private Book() {
@@ -69,18 +53,21 @@ public class Book implements Serializable {
 	 *            the isbn
 	 * @param yearOfPublication
 	 *            the yearOfPublication
+	 * @param description
+	 * 	          the description
 	 */
 	public Book(@Nonnull String title,
 				@Nonnull String author,
 				@Nonnull String edition,
 				@Nonnull String isbn,
-				int yearOfPublication) {
+				int yearOfPublication, String description) {
 		super();
 		this.title = title;
 		this.author = author;
 		this.edition = edition;
 		this.isbn = isbn;
 		this.yearOfPublication = yearOfPublication;
+		this.description = description;
 	}
 
 	public String getTitle() {
@@ -122,8 +109,24 @@ public class Book implements Serializable {
 	public void setYearOfPublication(int yearOfPublication) {
 		this.yearOfPublication = yearOfPublication;
 	}
+	/**
+	 * Get the description
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
 
-    public Borrowing getBorrowing() {
+	/**
+	 * Set the description
+	 * @param description the description
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+	public Borrowing getBorrowing() {
 		return borrowing;
 	}
 
@@ -144,7 +147,8 @@ public class Book implements Serializable {
 				", author='" + author + '\'' +
 				", edition='" + edition + '\'' +
 				", isbn='" + isbn + '\'' +
-				", yearOfPublication=" + yearOfPublication +
+				", yearOfPublication=" + yearOfPublication + '\'' +
+				", description=" + description +
 				'}';
 	}
 }

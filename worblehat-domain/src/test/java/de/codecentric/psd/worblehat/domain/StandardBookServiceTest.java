@@ -34,19 +34,19 @@ public class StandardBookServiceTest {
 
 	@Before
 	public void setup() {
-		aBook = new Book("title", "author", "edition", "isbn", 2016);
-		aCopyofBook = new Book("title", "author", "edition", "isbn", 2016);
-		anotherBook = new Book("title2", "author2", "edition2", "isbn2", 2016);
+		aBook = new Book("title", "author", "edition", "isbn", 2016, "description");
+		aCopyofBook = new Book("title", "author", "edition", "isbn", 2016, "description");
+		anotherBook = new Book("title2", "author2", "edition2", "isbn2", 2016, "description2");
 
-		aBorrowedBook = new Book("title", "author", "edition", "isbn", 2016);
+		aBorrowedBook = new Book("title", "author", "edition", "isbn", 2016, "description");
 		aBorrowing = new Borrowing(aBorrowedBook, BORROWER_EMAIL, NOW);
 		aBorrowedBook.borrowNowByBorrower(BORROWER_EMAIL);
 
-		aCopyofBorrowedBook = new Book("title", "author", "edition", "isbn", 2016);
+		aCopyofBorrowedBook = new Book("title", "author", "edition", "isbn", 2016, "description");
 		aBorrowingOfCopy = new Borrowing(aCopyofBorrowedBook, BORROWER_EMAIL, NOW);
 		aCopyofBorrowedBook.borrowNowByBorrower(BORROWER_EMAIL);
 
-		anotherBorrowedBook = new Book("title2", "author2", "edition2", "isbn2", 2016);
+		anotherBorrowedBook = new Book("title2", "author2", "edition2", "isbn2", 2016, "description2");
 		anotherBorrowing = new Borrowing(anotherBorrowedBook, BORROWER_EMAIL, NOW);
 		anotherBorrowedBook.borrowNowByBorrower(BORROWER_EMAIL);
 
