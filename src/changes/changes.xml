@@ -27,21 +27,21 @@
 
 		<release version="1.1" date="2011-04-06"
 			description="Release technology update">
-			<action dev="betaworblers" type="update">
+			<action dev="Fantastic Five" type="update">
 				Updated spring boot to version 1.5.17.
 			</action>
 
-			<action dev="betaworblers" type="update">
+			<action dev="Fantastic Five" type="update">
 				Improved input validation messages.
 			</action>
 		</release>
 
 		<release version="1.2" date="2011-04-06"
 			description="Book description">
-			<action dev="betaworblers" type="update">
+			<action dev="Fantastic Five" type="update">
 				Add and show book descriptions.
 			</action>
-			<action dev="betaworblers" type="fix" issue="WB-9001">
+			<action dev="Fantastic Five" type="fix" issue="WB-9001">
 				Fixes wrong validation messages.
 			</action>
 		</release>
