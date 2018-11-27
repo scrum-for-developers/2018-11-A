@@ -28,7 +28,7 @@
 		<release version="1.1" date="2011-04-06"
 			description="Release technology update">
 			<action dev="betaworblers" type="update">
-				Updated spring boot.
+				Updated spring boot to version 1.5.17.
 			</action>
 
 			<action dev="betaworblers" type="update">
