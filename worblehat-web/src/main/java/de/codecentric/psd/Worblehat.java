@@ -16,7 +16,9 @@ public class Worblehat {
 	private static final Logger LOG = LoggerFactory
 			.getLogger(InsertBookController.class);
 
-	private Worblehat(){}
+	public Worblehat(){
+		// spring constructor	
+	}
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
