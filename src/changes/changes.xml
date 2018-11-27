@@ -24,5 +24,16 @@
 				Return all borrowed books by one member.
 			</action>
 		</release>
+
+		<release version="1.1" date="2011-04-06"
+			description="Release technology update">
+			<action dev="betaworblers" type="update">
+				Updated spring boot.
+			</action>
+
+			<action dev="betaworblers" type="update">
+				Improved input validation messages.
+			</action>
+		</release>
 	</body>
 </document>
