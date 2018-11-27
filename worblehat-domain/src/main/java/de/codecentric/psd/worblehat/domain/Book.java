@@ -1,10 +1,12 @@
 package de.codecentric.psd.worblehat.domain;
 
-import javax.annotation.Nonnull;
-
-import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Optional;
+import javax.annotation.Nonnull;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  * Entity implementation class for Entity: Book
@@ -28,6 +30,24 @@ public class Book implements Serializable {
 
 	@OneToOne(mappedBy = "borrowedBook", orphanRemoval = true)
 	private Borrowing borrowing;
+
+	private String description;
+
+	/**
+	 * Get the description
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * Set the description
+	 * @param description the description
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	/**
 	 * Empty constructor needed by Hibernate.
