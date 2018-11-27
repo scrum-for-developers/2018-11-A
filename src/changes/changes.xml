@@ -38,7 +38,7 @@
 
 		<release version="1.2" date="2011-04-06"
 			description="Book description">
-			<action dev="betaworblers" type="fixes">
+			<action dev="betaworblers" type="fix">
 				Fixes wrong validation messages.
 			</action>
 		</release>
