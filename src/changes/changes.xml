@@ -25,7 +25,7 @@
 			</action>
 		</release>
 
-		<release version="1.1" date="2011-04-06"
+		<release version="1.1" date="2018-11-26"
 			description="Release technology update">
 			<action dev="Fantastic Five" type="update">
 				Updated spring boot to version 1.5.17.
@@ -36,13 +36,20 @@
 			</action>
 		</release>
 
-		<release version="1.2" date="2011-04-06"
+		<release version="1.2" date="2018-11-27"
 			description="Book description">
 			<action dev="Fantastic Five" type="update">
 				Add and show book descriptions.
 			</action>
 			<action dev="Fantastic Five" type="fix" issue="WB-9001">
 				Fixes wrong validation messages.
+			</action>
+		</release>
+
+		<release version="1.2" date="2018-11-27"
+			description="ISBN">
+			<action dev="Fantastic Five" type="update">
+				Unique ISBN for book editions.
 			</action>
 		</release>
 	</body>
