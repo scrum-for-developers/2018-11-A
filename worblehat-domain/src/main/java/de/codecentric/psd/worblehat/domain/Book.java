@@ -32,7 +32,7 @@ public class Book implements Serializable {
 	@OneToOne(mappedBy = "borrowedBook", orphanRemoval = true)
 	private Borrowing borrowing;
 
-	@Column(name = "description", columnDefinition="TEXT")
+	@Column(name = "description", columnDefinition = "TEXT")
 	private String description;
 
 	/**
@@ -45,24 +45,15 @@ public class Book implements Serializable {
 	/**
 	 * Creates a new book instance.
 	 * 
-	 * @param title
-	 *            the title
-	 * @param author
-	 *            the author
-	 * @param edition
-	 *            the edition
-	 * @param isbn
-	 *            the isbn
-	 * @param yearOfPublication
-	 *            the yearOfPublication
-	 * @param description
-	 * 	          the description
+	 * @param title             the title
+	 * @param author            the author
+	 * @param edition           the edition
+	 * @param isbn              the isbn
+	 * @param yearOfPublication the yearOfPublication
+	 * @param description       the description
 	 */
-	public Book(@Nonnull String title,
-				@Nonnull String author,
-				@Nonnull String edition,
-				@Nonnull String isbn,
-				int yearOfPublication, String description) {
+	public Book(@Nonnull String title, @Nonnull String author, @Nonnull String edition, @Nonnull String isbn,
+			int yearOfPublication, String description) {
 		super();
 		this.title = title;
 		this.author = author;
@@ -111,8 +102,10 @@ public class Book implements Serializable {
 	public void setYearOfPublication(int yearOfPublication) {
 		this.yearOfPublication = yearOfPublication;
 	}
+
 	/**
 	 * Get the description
+	 * 
 	 * @return the description
 	 */
 	public String getDescription() {
@@ -121,36 +114,31 @@ public class Book implements Serializable {
 
 	/**
 	 * Set the description
+	 * 
 	 * @param description the description
 	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-
 	public Borrowing getBorrowing() {
 		return borrowing;
 	}
 
 	boolean isSameCopy(@Nonnull Book book) {
-		return getTitle().equals(book.title) && getAuthor().equals(book.author);
+		return getTitle().equals(book.title) && getAuthor().equals(book.author) && getEdition().equals(book.edition);
 	}
 
 	public void borrowNowByBorrower(String borrowerEmailAddress) {
 		if (borrowing == null) {
-            this.borrowing = new Borrowing(this, borrowerEmailAddress);
-        }
+			this.borrowing = new Borrowing(this, borrowerEmailAddress);
+		}
 	}
 
 	@Override
 	public String toString() {
-		return "Book{" +
-				"title='" + title + '\'' +
-				", author='" + author + '\'' +
-				", edition='" + edition + '\'' +
-				", isbn='" + isbn + '\'' +
-				", yearOfPublication=" + yearOfPublication + '\'' +
-				", description=" + description +
-				'}';
+		return "Book{" + "title='" + title + '\'' + ", author='" + author + '\'' + ", edition='" + edition + '\''
+				+ ", isbn='" + isbn + '\'' + ", yearOfPublication=" + yearOfPublication + '\'' + ", description="
+				+ description + '}';
 	}
 }
